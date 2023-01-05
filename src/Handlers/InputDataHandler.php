@@ -2,12 +2,10 @@
 
 namespace OopExam\Handlers;
 
-use OopExam\Handlers\NewEntryHandler;
-
-echo '<pre>';
-
-class NewEntryHandler
+class InputDataHandler
 {
+    private const PAYMENT_ENTRIES_PATH = '../Files/paymentEntries.json';
+
     public function __construct(private array $newEntry)
     {
     }
@@ -16,16 +14,11 @@ class NewEntryHandler
     {
         return $this->newEntry;
     }
-}
 
-class InputDataHandler
-{
-    private const PAYMENT_ENTRIES_PATH = '../Files/paymentEntries.json';
-
-    public function addEntry(NewEntryHandler $newEntry): void
+    public function addEntry(): void
     {
         $existingEntries = $this->getPaymentEntriesInfo();
-        $existingEntries[] = $newEntry->getEntryArray();
+        $existingEntries[] = $this->getEntryArray();
         $this->updatePaymentEntriesInfo($existingEntries);
     }
 
@@ -41,6 +34,5 @@ class InputDataHandler
 
 }
 
-$newEntry = new NewEntryHandler($_POST);
-$newInputObj = new InputDataHandler();
-$newInputObj->addEntry($newEntry);
+$newInputObj = new InputDataHandler($_POST);
+$newInputObj->addEntry();
