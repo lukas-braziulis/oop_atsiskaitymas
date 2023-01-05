@@ -1,1 +1,0 @@
-This is OOP exam project.
