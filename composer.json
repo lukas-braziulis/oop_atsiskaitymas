@@ -1,0 +1,14 @@
+{
+    "name": "lukas_braziulis/oop_atsiskaitymas",
+    "autoload": {
+        "psr-4": {
+            "OopExam\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Lukas Braziulis"
+        }
+    ],
+    "require": {}
+}
