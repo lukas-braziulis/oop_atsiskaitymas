@@ -30,7 +30,7 @@ $grandTotal = getGrandTotal($entries);
 <fieldset style="border: 1px black solid; padding: 10px; margin-top: 50px;">
     <legend>ENTRIES</legend>
     <?php foreach ($entries as $key => $entryArray): ?>
-    <?//if(isset($entryArray['paid'])){continue;}; ?>
+    <?//if(isset($entryArray['paid'])){continue;}; ?> <!-- Nepavyko su šitu IF'u padaryti kad veiktų. -->
         <div style="display: flex; justify-content: space-between">
             <div>Mėnesis: <?= $entryArray['menesis'] ?></div>
             <div>Sunaudoti kWh: <?= $entryArray['sunaudotaElektra'] ?></div>
@@ -51,7 +51,7 @@ $grandTotal = getGrandTotal($entries);
 </form>
 <br>
 <br>
-<a href="http://localhost/OOP_atsiskaitymas/indexTest.php">Grįžt į suvedimo puslapį</a>
+<a href="http://localhost/OOP_atsiskaitymas/index.php">Grįžt į suvedimo puslapį</a>
 
 </body>
 

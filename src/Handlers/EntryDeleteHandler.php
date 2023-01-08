@@ -14,7 +14,7 @@ function setPaid()
 
     file_put_contents('../Files/paymentEntries.json', json_encode($newEntriesArray, JSON_PRETTY_PRINT));
 
-    header("Location: http://localhost/OOP_atsiskaitymas/indexTest.php");
+    header("Location: http://localhost/OOP_atsiskaitymas/index.php");
 };
 
 setPaid();

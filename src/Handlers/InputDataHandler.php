@@ -77,11 +77,14 @@ class DateChecker
 
         if ($inputDateObj->format('Y-m') >= $currentDateObj->format('Y-m')) {
             $message = 'Mokėjimas atliekamas per anksti.';
+//            header("Location: http://localhost/OOP_atsiskaitymas/index.php"); // Nuėmus komentarą - redirect'as į Home Page veikia ir duomenys neišsaugomi
             throw new DateException($message);
+
         }
 
         if ($inputDateObj->format('Y-m') < $currentDateObj->modify('-1month')->format('Y-m')) {
             $message = sprintf('Jūs vėluojate sumokėti mokesčius %s dienas(-ų).', $_POST['diff']);
+//            header("Location: http://localhost/OOP_atsiskaitymas/index.php"); // Nuėmus komentarą - redirect'as į Home Page veikia ir duomenys neišsaugomi
             throw new DateException($message);
         }
     }

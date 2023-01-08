@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace OopExam\Checkers;
 
-use OopExam\Exceptions\DateException;
+use OopExam\Exceptions\DateExceptionOriginal;
 use DateTime;
 use Exception;
 
@@ -30,13 +30,12 @@ class DateCheckerOriginal
 
         if ($inputDateObj->format('Y-m') >= $currentDateObj->format('Y-m')) {
             $message = 'Mokėjimas atliekamas per anksti.';
-            throw new DateException($message);
+            throw new DateExceptionOriginal($message);
         }
 
         if ($inputDateObj->format('Y-m') < $currentDateObj->modify('-1month')->format('Y-m')) {
             $message = sprintf('Jūs vėluojate sumokėti mokesčius %s dienas(-ų).', $_POST['diff']);
-            throw new DateException($message);
+            throw new DateExceptionOriginal($message);
         }
-        echo "checDate DONE";
     }
 }
